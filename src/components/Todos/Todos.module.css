@@ -35,8 +35,8 @@
   top: 5px;
   right: 5px;
 }
-.update_todo_btn,
-.delete_todo_btn {
+.update_todo_btn.update_todo_btn,
+.delete_todo_btn.delete_todo_btn {
   padding: 0.125rem;
   font-size: 1.125rem;
   background-color: white;
