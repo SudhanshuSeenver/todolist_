@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import styles from "./Modal.module.css";
 
 function Modal({ children, panelClasses, closeModal }) {
-  console.log(panelClasses, "panelClasses");
   useEffect(() => {
     const body = document.body;
     body.classList.add("overflow-hidden");
@@ -17,9 +16,7 @@ function Modal({ children, panelClasses, closeModal }) {
     <div className={styles.modal}>
       <div className={styles.modal_bg}></div>
       <div onClick={closeModal} className={styles.modal_bg_blur}></div>
-      <div className={`${styles.mainContent} ${panelClasses}`}>
-        <div className={`${styles.modal_panel} `}>{children}</div>
-      </div>
+      <div className={`${styles.mainContent} ${panelClasses}`}>{children}</div>
     </div>,
     document.querySelector(".modal-container")
   );

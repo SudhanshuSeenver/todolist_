@@ -13,11 +13,13 @@
 }
 
 .todo_container.completed {
-  /* color: ; */
+  color: RGB(25, 135, 84);
 }
 .todo_container.pending {
+  color: var(--color-secondary);
 }
 .todo_container.missed {
+  color: #dc3545;
 }
 
 .todo_topic {
@@ -46,5 +48,5 @@
   color: #777;
 }
 .delete_todo_btn {
-  color: red;
+  color: #dc3545;
 }
