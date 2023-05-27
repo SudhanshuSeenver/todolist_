@@ -1,0 +1,50 @@
+.todo_container {
+  min-width: 250px;
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid black;
+  border-bottom: 4px solid black;
+  position: relative;
+}
+
+.todo_container.completed {
+  /* color: ; */
+}
+.todo_container.pending {
+}
+.todo_container.missed {
+}
+
+.todo_topic {
+}
+.todo_desc {
+}
+.todo_time {
+}
+
+.actions {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  top: 5px;
+  right: 5px;
+}
+.update_todo_btn,
+.delete_todo_btn {
+  padding: 0.125rem;
+  font-size: 1.125rem;
+  background-color: white;
+  box-shadow: none;
+}
+.update_todo_btn {
+  color: #777;
+}
+.delete_todo_btn {
+  color: red;
+}

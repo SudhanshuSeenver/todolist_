@@ -1,0 +1,20 @@
+.btn {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-black);
+}
+.secondary {
+  background-color: var(--color-black);
+  color: var(--color-primary);
+}
