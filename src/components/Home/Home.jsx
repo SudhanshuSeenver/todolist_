@@ -13,6 +13,16 @@ function Home() {
   const [date, setDate] = useState("");
   const [desc, setDesc] = useState("");
 
+  const demoTodos = [
+    {
+      topic: "Zedd labz Assignment",
+      desc: "Make a todo app and weather app with given functionalities in doc",
+      date: "2023-05-27T17:00",
+      id: "id2342342342",
+      checked: true,
+    },
+  ];
+
   function handleClickAdd(e) {
     if (topic && date && desc) {
       const uniqId = "id" + new Date().getTime();

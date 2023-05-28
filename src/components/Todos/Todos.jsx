@@ -45,7 +45,9 @@ function Todos({ todo, todos, updateTodos, id }) {
     <div className={classCont}>
       <h4 className={styles.todo_topic}>{todo.topic}</h4>
       <p className={styles.todo_desc}>{todo.description}</p>
-      <p className={styles.todo_time}>{todo.date}</p>
+      <p className={styles.todo_time}>
+        {new Date(todo.date).toLocaleString("en-IN")}
+      </p>
       <div className={classUpdFlag}>
         {todo.checked
           ? "Done"
