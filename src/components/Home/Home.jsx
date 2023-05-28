@@ -15,7 +15,11 @@ function Home() {
 
   function handleClickAdd(e) {
     if (topic && date && desc) {
-      setTodos([...todos, { topic, date, description: desc }]);
+      const uniqId = "id" + new Date().getTime();
+      setTodos([
+        ...todos,
+        { topic, date, description: desc, id: uniqId, checked: false },
+      ]);
       closeModal(e);
       setDate("");
       setTopic("");
@@ -48,16 +52,24 @@ function Home() {
   }
 
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
+    if (todos.length) localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>TODO</h1>
       <main className={styles.main_section}>
-        {todos.map((todo) => (
-          <Todos todo={todo} />
-        ))}
+        {todos.map((todo) => {
+          return (
+            <Todos
+              key={todo.id}
+              todos={todos}
+              updateTodos={setTodos}
+              todo={todo}
+              id={todo.id}
+            />
+          );
+        })}
       </main>
       <Button onClick={openModal} primary classNm={styles.add_todo_btn}>
         <IoMdAdd />
