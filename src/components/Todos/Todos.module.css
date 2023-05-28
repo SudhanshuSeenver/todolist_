@@ -61,7 +61,7 @@
 .delete_todo_btn {
   color: #dc3545;
 }
-.check_todo_btn {
+.check_todo_btn.check_todo_btn {
   padding: 0.125rem;
   font-size: 1rem;
   box-shadow: none;
@@ -82,11 +82,11 @@
   filter: brightness(0.9);
   background-color: #eee;
 }
-.check_todo_btn.not_done {
+/* .check_todo_btn.not_done {
 }
 
 .check_todo_btn.not_done {
-}
+} */
 
 .status_flag {
   position: absolute;
