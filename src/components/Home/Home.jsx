@@ -7,21 +7,37 @@ import Modal from "../Modal/Modal";
 import { RiCloseFill } from "react-icons/ri";
 
 function Home() {
+  const demoTodos = [
+    {
+      topic: "Zedd labz Assignment",
+      description:
+        "Make a todo app and weather app with given functionalities in doc",
+      date: "2023-05-27T17:00",
+      id: "id23432342342",
+      checked: true,
+    },
+    {
+      topic: "Zedd labz Assignment",
+      description:
+        "Make a todo app and weather app with given functionalities in doc",
+      date: "2023-06-30T17:00",
+      id: "id23442342342",
+      checked: false,
+    },
+    {
+      topic: "Zedd labz Assignment",
+      description:
+        "Make a todo app and weather app with given functionalities in doc",
+      date: "2023-05-26T17:00",
+      id: "id23422342342",
+      checked: false,
+    },
+  ];
   const [todos, setTodos] = useState([]);
   const [showModal, setShoeModal] = useState(false);
   const [topic, setTopic] = useState("");
   const [date, setDate] = useState("");
   const [desc, setDesc] = useState("");
-
-  const demoTodos = [
-    {
-      topic: "Zedd labz Assignment",
-      desc: "Make a todo app and weather app with given functionalities in doc",
-      date: "2023-05-27T17:00",
-      id: "id2342342342",
-      checked: true,
-    },
-  ];
 
   function handleClickAdd(e) {
     if (topic && date && desc) {
@@ -48,7 +64,8 @@ function Home() {
 
   useEffect(() => {
     const data = localStorage.getItem("todos");
-    if (data) setTodos(JSON.parse(data));
+    if (data) setTodos([...JSON.parse(data)]);
+    else setTodos([...demoTodos]);
   }, []);
 
   function handleChangeTopic(e) {
